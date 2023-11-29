@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo12.FXMLDocumentController">
+    <children>
+        <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Button fx:id="btnAdd" disable="true" mnemonicParsing="false" onAction="#add" text="Aggiungi Evento" />
+                        <DatePicker fx:id="datePicker" />
+                        <TextField fx:id="tfdDescrizione" prefHeight="25.0" prefWidth="282.0" promptText="aggiungi descrizione..." />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <TableView fx:id="mainTab" editable="true" prefHeight="357.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="dataClm" prefWidth="140.0" text="Data" />
+                        <TableColumn fx:id="eventoClm" onEditCommit="#editEvento" prefWidth="459.0" text="Evento" />
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu fx:id="contextMenu">
+                            <items>
+                                <MenuItem fx:id="rimuoviItem" mnemonicParsing="false" onAction="#rimuovi" text="Rimuovi Evento" />
+                                <MenuItem fx:id="importaItem" mnemonicParsing="false" onAction="#importa" text="Importa lista come CSV" />
+                                <MenuItem fx:id="esportaItem" mnemonicParsing="false" onAction="#esporta" text="Esporta lista come CSV" />
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
